@@ -3,7 +3,7 @@ entries:
   mysql:
   - apiVersion: v2
     appVersion: 5.7.32
-    created: "2023-08-07T12:52:42.89578+03:00"
+    created: "2023-08-07T12:58:40.422463+03:00"
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system.
     digest: e209ea086f4ec16c1fd244ed4ad3dbc910c26b755fde7092adf3c71b3fb85813
@@ -22,7 +22,7 @@ entries:
     version: 1.0.0
   mysql-backup:
   - apiVersion: v2
-    created: "2023-08-07T12:52:42.896096+03:00"
+    created: "2023-08-07T12:58:40.422895+03:00"
     digest: dd838b6513ab2093395962af6cffe7715c5666972b3e667bacb3034c405627b2
     name: mysql-backup
     urls:
@@ -31,7 +31,37 @@ entries:
   snipeit:
   - apiVersion: v2
     appVersion: v6.0.14
-    created: "2023-08-07T12:52:42.897045+03:00"
+    created: "2023-08-07T12:58:40.426523+03:00"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://storage.googleapis.com/t3n-helm-charts
+      version: ^1.0.0
+    - condition: mysql-backup.enabled
+      name: mysql-backup
+      repository: https://storage.googleapis.com/t3n-helm-charts
+      version: ~1.0.1
+    description: A free open source IT asset/license management system
+    digest: 1b60ca92627ef8088b3d4a61601c6a020467d769aac3cc537534a1ca0e01fd39
+    home: https://snipeitapp.com
+    icon: https://snipeitapp.com/img/logos/snipe-it-logo-xs.png
+    keywords:
+    - snipeit
+    - inventory
+    - asset management
+    maintainers:
+    - email: max.schmidt@t3n.de
+      name: mschmidt291
+    name: snipeit
+    sources:
+    - https://github.com/t3n/helm-charts
+    - https://github.com/snipe/snipe-it
+    urls:
+    - charts/snipeit-3.4.2.tgz
+    version: 3.4.2
+  - apiVersion: v2
+    appVersion: v6.0.14
+    created: "2023-08-07T12:58:40.424704+03:00"
     dependencies:
     - condition: mysql.enabled
       name: mysql
@@ -59,4 +89,4 @@ entries:
     urls:
     - charts/snipeit-3.4.1.tgz
     version: 3.4.1
-generated: "2023-08-07T12:52:42.895077+03:00"
+generated: "2023-08-07T12:58:40.419269+03:00"
