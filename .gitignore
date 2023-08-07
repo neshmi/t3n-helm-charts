@@ -1,5 +1,4 @@
 *.tgz
 charts/*
-index.yaml
 test.yaml
 *.lock
