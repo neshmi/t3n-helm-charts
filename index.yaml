@@ -1,3 +1,62 @@
 apiVersion: v1
-entries: {}
-generated: "2023-08-07T12:13:13.329169+03:00"
+entries:
+  mysql:
+  - apiVersion: v2
+    appVersion: 5.7.32
+    created: "2023-08-07T12:52:42.89578+03:00"
+    description: Fast, reliable, scalable, and easy to use open-source relational
+      database system.
+    digest: e209ea086f4ec16c1fd244ed4ad3dbc910c26b755fde7092adf3c71b3fb85813
+    home: https://www.mysql.com/
+    icon: https://www.mysql.com/common/logos/logo-mysql-170x115.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    name: mysql
+    sources:
+    - https://github.com/kubernetes/charts
+    - https://github.com/docker-library/mysql
+    urls:
+    - charts/mysql-1.0.0.tgz
+    version: 1.0.0
+  mysql-backup:
+  - apiVersion: v2
+    created: "2023-08-07T12:52:42.896096+03:00"
+    digest: dd838b6513ab2093395962af6cffe7715c5666972b3e667bacb3034c405627b2
+    name: mysql-backup
+    urls:
+    - charts/mysql-backup-2.1.0.tgz
+    version: 2.1.0
+  snipeit:
+  - apiVersion: v2
+    appVersion: v6.0.14
+    created: "2023-08-07T12:52:42.897045+03:00"
+    dependencies:
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://storage.googleapis.com/t3n-helm-charts
+      version: ^1.0.0
+    - condition: mysql-backup.enabled
+      name: mysql-backup
+      repository: https://storage.googleapis.com/t3n-helm-charts
+      version: ~1.0.1
+    description: A free open source IT asset/license management system
+    digest: 3ed73f895525dd216091821404ee7503ff859ccfab7fb1250084464b4983e8fc
+    home: https://snipeitapp.com
+    icon: https://snipeitapp.com/img/logos/snipe-it-logo-xs.png
+    keywords:
+    - snipeit
+    - inventory
+    - asset management
+    maintainers:
+    - email: max.schmidt@t3n.de
+      name: mschmidt291
+    name: snipeit
+    sources:
+    - https://github.com/t3n/helm-charts
+    - https://github.com/snipe/snipe-it
+    urls:
+    - charts/snipeit-3.4.1.tgz
+    version: 3.4.1
+generated: "2023-08-07T12:52:42.895077+03:00"

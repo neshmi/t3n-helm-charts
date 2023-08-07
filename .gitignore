@@ -1,4 +1,2 @@
-*.tgz
-charts/*
 test.yaml
 *.lock
